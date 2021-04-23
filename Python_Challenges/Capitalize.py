@@ -37,6 +37,4 @@ def solve(s):
         s = s.replace(i, i.capitalize())
     return s
 
-s.split()
-
 if __name__ == '__main__':

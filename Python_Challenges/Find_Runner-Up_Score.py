@@ -24,6 +24,17 @@ Given list is [2,3,6,6,5]. The maximum score is 6, second maximum is 5. Hence, w
 """
 
 if __name__ == '__main__':
-    n = int(input())
-    arr = map(int, input().split())
-    print(sorted(set(arr))[-2])
+    python_students = []
+    score_list = []
+    sl_list = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        python_students.append([name,score])
+        score_list.append(score)
+    second_last = list(sorted(set(score_list)))[1]
+    for i in range(len(python_students)):
+        if python_students[i][1] == second_last:
+            sl_list.append(python_students[i][0])
+    for i in range(len(sl_list)):
+        print(sorted(sl_list)[i])

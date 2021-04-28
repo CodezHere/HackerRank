@@ -55,11 +55,15 @@ Sample Output 0
 [1, 5, 9, 10]
 [9, 5, 1]
 """
-
 if __name__ == '__main__':
-    N = int(input())
-    a = []
-    for i in range(N):
-        process = input().split()
-        getattr(a,process[0])(*map(int, process[1:]))
-        print(a)
+    n = int(input())
+    l = []
+    for _ in range(n):
+        s = input().strip().split(' ')
+        cmd = s[0]
+        args = s[1:]
+        if cmd != "print":
+            cmd += "("+",".join(args)+ ")"
+            eval("l."+cmd)
+        else:
+            print(l)

@@ -57,11 +57,13 @@ import sys
 #
 # The function accepts INTEGER n as parameter.
 #
-
 def staircase(n):
     # Write your code here
+    for i in range(n):
+        print((('#')*(i+1)).rjust(n))
 
 if __name__ == '__main__':
     n = int(input().strip())
 
     staircase(n)
+

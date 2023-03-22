@@ -59,7 +59,7 @@ Explanation 1
 The second kangaroo has a starting location that is ahead (further to the right) of the first kangaroo's starting location (i.e., x2 > x1). Because the second kangaroo moves at a faster rate (meaning v2 > v1) and is already ahead of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO. 
 """
 
-#!/bin/python3
+!/bin/python3
 
 import math
 import os
@@ -79,16 +79,21 @@ import sys
 #
 
 def kangaroo(x1, v1, x2, v2):
-    position1 = x1
-    position2 = x2
-    for i in range(len(10000)):
-        
+    
     if x1 == x2:
         return "YES"
+    
+    if v1 == v2:
+        return "NO"
+    
+    if x1<x2 and v1<v2:
+        return "NO"
+    
+    if ((x2-x1) % (v1-v2) == 0):
+        return "YES"
     else:
-        kang1_hop1 = x1 + v1
-        kang2_hop1 = x2 + v2
-        
+        return "NO"
+
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
